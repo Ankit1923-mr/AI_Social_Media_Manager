@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function SocialMediaManager() {
-  const backendBaseUrl = "http://localhost:5000/api";
+  const backendBaseUrl = "https://ai-social-media-manager-yjgy.onrender.com/api" //"http://localhost:5000/api";
 
   // Facebook connection
   const [fbStatus, setFbStatus] = useState("Not connected");
