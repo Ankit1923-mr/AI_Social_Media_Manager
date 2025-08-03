@@ -1,0 +1,139 @@
+/* Basic styling for SocialMediaManager component */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+h1, h3, h4 {
+  color: #2c3e50;
+}
+
+button {
+  margin: 5px 0 10px 10px;
+  padding: 6px 12px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+select,
+textarea {
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: auto;
+}
+
+textarea {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+.status, .error, .publish-status {
+  margin: 6px 0 12px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.status {
+  background: #d5ecf9;
+  color: #0078d7;
+  font-weight: 600;
+}
+
+.error {
+  background: #fbeaea;
+  color: #d93025;
+  font-weight: 700;
+}
+
+.publish-status {
+  background: #d4edda;
+  color: #155724;
+  font-weight: 600;
+}
+
+.profile, .news, .posts-list {
+  background: #f4f6f7;
+  margin: 12px 0 20px;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 280px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 13px;
+  color: #2f3b3e;
+}
+
+.news ul {
+  padding-left: 20px;
+}
+
+.news li {
+  margin: 6px 0;
+}
+
+.news a {
+  font-size: 12px;
+  color: #0078d7;
+  text-decoration: none;
+  margin-left: 6px;
+}
+.news a:hover {
+  text-decoration: underline;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.schedule-table th {
+  background-color: #0078d7;
+  color: white;
+  text-align: left;
+}
+
+.schedule-table td button {
+  font-size: 12px;
+  margin: 2px 5px 2px 0;
+  padding: 4px 8px;
+}

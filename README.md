@@ -1,4 +1,3 @@
-```markdown
 # Growthzi AI Social Media Manager
 
 A web application for generating, previewing, scheduling, and publishing social media posts powered by AI. Connects to a Facebook page (simulated) and leverages Groq LLM API for content generation, allowing users to automate social media marketing workflows from business profile extraction and industry news to scheduled posts publishing.
@@ -142,7 +141,7 @@ Make sure the backend API URL configured in `SocialMediaManager.jsx` matches you
 
 ## Project Structure
 
-```
+
 /app
   /routes
     business.py

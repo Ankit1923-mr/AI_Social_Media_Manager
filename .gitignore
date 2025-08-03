@@ -1,0 +1,52 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Flask stuff
+instance/
+.webassets-cache
+*.log
+
+# dotenv files (contains secrets)
+.env
+
+# Editor folders and system files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# React / frontend build
+node_modules/
+build/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Misc
+*.bak
+*.tmp
+*.temp
+
+# If you use Jupyter Notebooks
+.ipynb_checkpoints
