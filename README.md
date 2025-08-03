@@ -125,18 +125,19 @@ Make sure the backend API URL configured in `SocialMediaManager.jsx` matches you
 
 ## API Endpoints
 
-| Endpoint                      | Method   | Description                                         | Response Example / Output                              |
-|------------------------------|----------|----------------------------------------------------|-------------------------------------------------------|
-| `/api/facebook/connect`       | POST     | Simulates Facebook page connection                  | JSON with `status`, `fb_page_id`, and `access_token`   |
-| `/api/facebook/publish`       | POST     | Simulate publishing a post; returns mock post URL   | JSON indicating success, `post_id`, `post_url`         |
-| `/api/business/profile`       | POST     | Extract business profile from website URL           | JSON with `name`, `industry`, `services`, `tone_of_voice`, `unique_value_proposition` |
-| `/api/news/industry-news`     | POST     | Fetch current news related to the given industry    | JSON with list of news items, each with `headline`, optional `url` |
-| `/api/content/generate-posts` | POST     | Generate AI-powered social media posts               | JSON with array `posts` containing generated post texts |
-| `/api/weekly-planner/`        | POST     | Generate a weekly posting schedule with chosen days | JSON mapping weekdays (`Mon`, etc.) to post contents   |
-| `/api/weekly-planner/`        | GET      | Retrieve the current weekly posting schedule         | JSON mapping weekdays to scheduled posts               |
-| `/api/weekly-planner/{day}`   | PUT      | Update the scheduled post content for a specific day| JSON of updated schedule (day -> content)              |
-| `/api/weekly-planner/{day}`   | DELETE   | Delete the scheduled post for a specific day         | JSON of updated schedule after deletion                 |
-| `/api/weekly-planner/reset`   | DELETE   | Clear the entire weekly schedule                     | JSON confirmation message (e.g., `{ "message": "Schedule reset successfully." }`) |
+| Endpoint                    | Method | Returned JSON Keys                                        | Sample Response                                                                                          |
+|----------------------------|--------|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `/api/facebook/connect`     | POST   | `status`, `fb_page_id`, `access_token`                   | { "status": "connected", "fb_page_id": "1234567890", "access_token": "mock_access_token" }              |
+| `/api/facebook/publish`     | POST   | `success`, `post_id`, `post_url`                         | { "success": true, "post_id": "mock_post_123456", "post_url": "https://facebook.com/1234567890/posts/mock_post_123456" }  |
+| `/api/business/profile`     | POST   | `name`, `industry`, `services`, `tone_of_voice`, `unique_value_proposition` | { "name": "Acme Corp", "industry": "Technology", "services": ["Software Development", "Cloud"], "tone_of_voice": "Professional", "unique_value_proposition": "Innovative solutions tailored to clients" } |
+| `/api/news/industry-news`   | POST   | `news` (array of objects with `headline`, optional `url`) | { "news": [ { "headline": "New AI breakthrough announced", "url": "https://news.example.com/ai-breakthrough" }, { "headline": "Cloud computing trends 2025" } ] } |
+| `/api/content/generate-posts` | POST | `posts` (array of strings)                               | { "posts": [ "Discover the future with Acme Corp.", "Innovative solutions for your business.", "Learn industry insights from Acme Corp." ] }        |
+| `/api/weekly-planner`       | POST   | Weekday keys (`Mon`, `Tue`, etc.) with post content (string) | { "Mon": "Post 1 content here.", "Wed": "Post 2 content here.", "Fri": "Post 3 content here." }          |
+| `/api/weekly-planner`       | GET    | Weekday keys with post content (string)                  | { "Mon": "Post 1 content here.", "Wed": "Post 2 content here.", "Fri": "Post 3 content here." }          |
+| `/api/weekly-planner/{day}` | PUT    | Weekday keys with updated post content                   | { "Mon": "Updated post content for Monday.", "Wed": "Post 2 content here.", "Fri": "Post 3 content here." } |
+| `/api/weekly-planner/{day}` | DELETE | Weekday keys with post content after deletion            | { "Mon": "Post 1 content here.", "Fri": "Post 3 content here." }                                       |
+| `/api/weekly-planner/reset` | DELETE | `message`                                                | { "message": "Schedule reset successfully." }                                                         |
+
 
 
 ## Project Structure
