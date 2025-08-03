@@ -30,8 +30,7 @@ A web application for generating, previewing, scheduling, and publishing social 
 - Clear React frontend UI with intuitive flow and status/error messages
 
 ## Demo
-
-*(Optional: Add screenshots or link to a live demo if available. Place here the screenshots of the UI components such as the Business Profile display, Generated Posts preview, Scheduler table, Publish confirmation, etc.)*
+![alt text](image.png)
 
 ## Tech Stack
 
@@ -88,7 +87,7 @@ GROQ_API_KEY=your_groq_api_key_here
 python run.py
 ```
 
-This will start the backend server on `http://localhost:5000`.
+This will start the backend server on `https://ai-social-media-manager-yjgy.onrender.com/api`.
 
 ### Frontend Setup
 
@@ -110,13 +109,13 @@ npm install
 npm start
 ```
 
-The React app will run on `http://localhost:3000` by default.
+The React app will run on `` by default.
 
-Make sure the backend API URL configured in `SocialMediaManager.jsx` matches your backend location (`http://localhost:5000/api`).
+Make sure the backend API URL configured in `SocialMediaManager.jsx` matches your backend location (`https://ai-social-media-manager-yjgy.onrender.com/api`).
 
 ## Usage
 
-1. Open the React frontend in your browser (`http://localhost:3000`).
+1. Open the React frontend in your browser (`https://ankit1923-mr.github.io/AI_Social_Media_Manager/`).
 2. Click **Connect Facebook** to simulate linking a Facebook page.
 3. Enter the **Business Website URL** and click **Generate Posts (Full Flow)**. This triggers profile retrieval, news fetch, and AI post generation.
 4. Preview, edit, or delete generated posts.
@@ -141,7 +140,7 @@ Make sure the backend API URL configured in `SocialMediaManager.jsx` matches you
 
 ## Project Structure
 
-
+```
 /app
   /routes
     business.py
@@ -162,6 +161,7 @@ frontend/
 requirements.txt
 run.py
 .gitignore
+
 ```
 
 ## Key Components
