@@ -125,18 +125,19 @@ Make sure the backend API URL configured in `SocialMediaManager.jsx` matches you
 
 ## API Endpoints
 
-| Endpoint                     | Method  | Description                                    |
-|-----------------------------|---------|------------------------------------------------|
-| `/api/facebook/connect`      | POST    | Simulates Facebook page connection              |
-| `/api/facebook/publish`      | POST    | Simulate publishing a post, returns mock post URL |
-| `/api/business/profile`      | POST    | Extract business profile from website URL       |
-| `/api/news/industry-news`    | POST    | Fetch current industry news based on industry   |
-| `/api/content/generate-posts`| POST    | Generate AI social media posts                   |
-| `/api/weekly-planner/`       | POST    | Generate a weekly post schedule                   |
-| `/api/weekly-planner/`       | GET     | Get current weekly post schedule                  |
-| `/api/weekly-planner/`  | PUT     | Update post content for a day                      |
-| `/api/weekly-planner/`  | DELETE  | Delete scheduled post for a day                    |
-| `/api/weekly-planner/reset`  | DELETE  | Reset entire weekly schedule                       |
+| Endpoint                      | Method   | Description                                         | Response Example / Output                              |
+|------------------------------|----------|----------------------------------------------------|-------------------------------------------------------|
+| `/api/facebook/connect`       | POST     | Simulates Facebook page connection                  | JSON with `status`, `fb_page_id`, and `access_token`   |
+| `/api/facebook/publish`       | POST     | Simulate publishing a post; returns mock post URL   | JSON indicating success, `post_id`, `post_url`         |
+| `/api/business/profile`       | POST     | Extract business profile from website URL           | JSON with `name`, `industry`, `services`, `tone_of_voice`, `unique_value_proposition` |
+| `/api/news/industry-news`     | POST     | Fetch current news related to the given industry    | JSON with list of news items, each with `headline`, optional `url` |
+| `/api/content/generate-posts` | POST     | Generate AI-powered social media posts               | JSON with array `posts` containing generated post texts |
+| `/api/weekly-planner/`        | POST     | Generate a weekly posting schedule with chosen days | JSON mapping weekdays (`Mon`, etc.) to post contents   |
+| `/api/weekly-planner/`        | GET      | Retrieve the current weekly posting schedule         | JSON mapping weekdays to scheduled posts               |
+| `/api/weekly-planner/{day}`   | PUT      | Update the scheduled post content for a specific day| JSON of updated schedule (day -> content)              |
+| `/api/weekly-planner/{day}`   | DELETE   | Delete the scheduled post for a specific day         | JSON of updated schedule after deletion                 |
+| `/api/weekly-planner/reset`   | DELETE   | Clear the entire weekly schedule                     | JSON confirmation message (e.g., `{ "message": "Schedule reset successfully." }`) |
+
 
 ## Project Structure
 
